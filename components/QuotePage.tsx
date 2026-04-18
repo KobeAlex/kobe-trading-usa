@@ -4,10 +4,14 @@ import { useState, FormEvent } from 'react';
 import { Icon } from './Icon';
 import type { Locale, TranslationSet } from '@/lib/i18n';
 
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || 'b890fa64-b99b-432d-aaa3-29323f222baf';
+
 interface Props { t: TranslationSet; lang: Locale; }
 
 export default function QuotePage({ t, lang }: Props) {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
   const [form, setForm] = useState({
     name: '', company: '', email: '', phone: '',
     type: t.quote.types[0] as string, message: '',
@@ -15,9 +19,37 @@ export default function QuotePage({ t, lang }: Props) {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // For production: connect to Web3Forms, Formspree, or your own API
-    // For now, show success confirmation
-    setSubmitted(true);
+    setSending(true);
+    setError('');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New ${form.type} — ${form.company || form.name} | Kobe Trading USA`,
+          from_name: form.name,
+          name: form.name,
+          company: form.company,
+          email: form.email,
+          phone: form.phone,
+          inquiry_type: form.type,
+          message: form.message,
+        }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError(lang === 'es' ? 'Error al enviar. Intente de nuevo.' : 'Failed to send. Please try again.');
+      }
+    } catch {
+      setError(lang === 'es' ? 'Error de conexión. Intente de nuevo.' : 'Connection error. Please try again.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -68,9 +100,14 @@ export default function QuotePage({ t, lang }: Props) {
                 <textarea value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} rows={5}
                   className="w-full p-3 rounded-md text-sm text-navy font-[inherit] resize-y" style={{ border: '1px solid #D9DEE6' }} />
               </div>
-              <button type="submit"
-                className="mt-5 w-full bg-navy text-white px-6 py-3.5 font-semibold text-[15px] rounded-md flex items-center justify-center gap-2.5 hover:bg-navy-deep transition-colors cursor-pointer">
-                {t.quote.submit} <Icon name="arrow" size={16} />
+              {error && (
+                <div className="mt-3 p-3 rounded-md text-sm text-red-700 bg-red-50 border border-red-200">
+                  {error}
+                </div>
+              )}
+              <button type="submit" disabled={sending}
+                className="mt-5 w-full bg-navy text-white px-6 py-3.5 font-semibold text-[15px] rounded-md flex items-center justify-center gap-2.5 hover:bg-navy-deep transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed">
+                {sending ? (lang === 'es' ? 'Enviando...' : 'Sending...') : t.quote.submit} {!sending && <Icon name="arrow" size={16} />}
               </button>
             </>
           )}

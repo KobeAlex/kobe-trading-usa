@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    { "source": "/wp-admin/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-login.php", "destination": "/", "permanent": true },
+    { "source": "/wp-content/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-includes/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-json/:path*", "destination": "/", "permanent": true },
+    { "source": "/xmlrpc.php", "destination": "/", "permanent": true },
+    { "source": "/feed/:path*", "destination": "/", "permanent": true },
+    { "source": "/comments/feed/:path*", "destination": "/", "permanent": true },
+    { "source": "/trackback/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-cron.php", "destination": "/", "permanent": true },
+    { "source": "/wp-signup.php", "destination": "/", "permanent": true },
+    { "source": "/wp-register.php", "destination": "/", "permanent": true },
+    { "source": "/index.php", "destination": "/", "permanent": true },
+    { "source": "/index.php/:path*", "destination": "/", "permanent": true },
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/contact", "destination": "/en/quote/", "permanent": true },
+    { "source": "/contact-us", "destination": "/en/quote/", "permanent": true },
+    { "source": "/contacto", "destination": "/es/quote/", "permanent": true },
+    { "source": "/about", "destination": "/en/about/", "permanent": true },
+    { "source": "/about-us", "destination": "/en/about/", "permanent": true },
+    { "source": "/services", "destination": "/en/services/", "permanent": true },
+    { "source": "/products", "destination": "/en/brands/", "permanent": true },
+    { "source": "/brands", "destination": "/en/brands/", "permanent": true },
+    { "source": "/quote", "destination": "/en/quote/", "permanent": true },
+    { "source": "/request-quote", "destination": "/en/quote/", "permanent": true }
+  ]
+}

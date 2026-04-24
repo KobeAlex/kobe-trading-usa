@@ -3,7 +3,7 @@ export default function JsonLd() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Kobe Trading USA',
-    description: 'Wholesale distribution, logistics, and government contracting from Miami, FL. Authorized dealer for Glenair, MIRA Safety, WellAir, Elation, and 20+ brands.',
+    description: 'Wholesale distribution, logistics, and government contracting from Miami, FL. Authorized dealer for Glenair, MIRA Safety, WellAir, American DJ, and 20+ brands.',
     url: 'https://www.kobetradingusa.com',
     telephone: '(305) 863-7417',
     email: 'info@kobetradingusa.com',

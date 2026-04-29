@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     default: 'Kobe Trading USA — Distribution · Logistics · Government Supply',
     template: '%s | Kobe Trading USA',
   },
-  description: 'Wholesale distribution, logistics, and government contracting from Miami, FL. Authorized dealer for Glenair, MIRA Safety, WellAir, American DJ, and 20+ brands. SAM.gov registered.',
+  description: 'Wholesale distribution, logistics, and government contracting from Miami, FL. Authorized dealer for Glenair, MIRA Safety, WellAir, and 20+ brands. SAM.gov registered.',
   keywords: ['wholesale distribution', 'government contracting', 'logistics', 'Miami', 'Doral FL', 'LATAM distribution', 'mil-spec connectors', 'pro audio', 'safety equipment', 'SAM.gov'],
   openGraph: {
     type: 'website',

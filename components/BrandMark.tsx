@@ -3,7 +3,6 @@ const BRAND_STYLES: Record<string, string> = {
   "MIRA Safety": "font-barlow-condensed font-bold tracking-[0.05em] uppercase",
   "WellAir": "font-inter font-extrabold tracking-tight",
   "Betco": "font-inter font-extrabold tracking-tight",
-  "American DJ": "font-barlow-condensed font-bold tracking-[0.05em] uppercase",
   "Brane Audio": "font-inter font-extrabold tracking-tight",
   "Wet Sounds": "font-barlow-condensed font-bold tracking-[0.05em] uppercase",
   "Kobe Wood Line": "font-playfair font-bold tracking-wide",

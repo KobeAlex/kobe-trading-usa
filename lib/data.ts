@@ -43,19 +43,6 @@ export const FLAGSHIP_BRANDS: FlagshipBrand[] = [
     url: "https://www.glenair.com/",
   },
   {
-    name: "MIRA Safety",
-    tier: "Authorized Dealer",
-    category: "CBRN Protection",
-    founded: "2020",
-    origin: "Czech Republic",
-    certs: ["NIJ Level III/III+", "CE Certified"],
-    description_en: "Premium CBRN protection for military, law enforcement, industrial, and civilian applications. Gas masks, tactical respirators, CBRN filters, and NIJ-certified body armor.",
-    description_es: "Protección CBRN premium para uso militar, policial, industrial y civil. Máscaras de gas, respiradores tácticos, filtros CBRN y chalecos certificados NIJ.",
-    tags: ["CM-6M", "CM-7M", "NBC-77 SOF", "TAPR", "NIJ .06"],
-    color: "#1a1a1a",
-    url: "https://mirasafety.com/",
-  },
-  {
     name: "WellAir",
     tier: "Distribution Partner",
     category: "Indoor Air Quality",
@@ -82,19 +69,6 @@ export const FLAGSHIP_BRANDS: FlagshipBrand[] = [
     url: "https://www.betco.com/",
   },
   {
-    name: "Wet Sounds",
-    tier: "Authorized Dealer",
-    category: "Marine & Powersports Audio",
-    founded: "2005",
-    origin: "Made in USA",
-    certs: ["Marine Grade", "IPX Rated"],
-    description_en: "Premium marine audio systems engineered for boats, powersports, and extreme environments. Tower speakers, subwoofers, amplifiers, and soundbars built to withstand saltwater, UV, and vibration.",
-    description_es: "Sistemas de audio marino premium para lanchas, powersports y ambientes extremos. Parlantes de torre, subwoofers, amplificadores y barras de sonido resistentes a salitre, UV y vibración.",
-    tags: ["Tower Speakers", "Subwoofers", "Amplifiers", "Marine Grade"],
-    color: "#0E2A47",
-    url: "https://www.wetsounds.com/",
-  },
-  {
     name: "Brane Audio",
     tier: "Authorized Dealer",
     category: "High-Performance Audio",
@@ -107,19 +81,6 @@ export const FLAGSHIP_BRANDS: FlagshipBrand[] = [
     color: "#8B1538",
     url: "https://braneaudio.com/",
   },
-  {
-    name: "Kobe Wood Line",
-    tier: "Our Product Line",
-    category: "Wood & Lumber",
-    founded: "Direct Import",
-    origin: "Americas",
-    certs: ["FSC Available"],
-    description_en: "Direct-import hardwood, plywood, engineered wood, and treated lumber. Containerized FOB Miami to distributors, construction contractors, and building supply across Latin America.",
-    description_es: "Importación directa de maderas duras, contrachapados, madera de ingeniería y tratada. FOB Miami en contenedores para distribuidores, contratistas y proveedores de construcción en Latinoamérica.",
-    tags: ["Hardwood", "Plywood", "Treated Lumber", "Engineered", "FOB Miami"],
-    color: "#6B4423",
-    url: "https://www.kobetradingusa.com/contact/",
-  },
 ];
 
 export interface Category {
@@ -130,12 +91,9 @@ export interface Category {
 }
 
 export const CATEGORIES: Category[] = [
-  { key: "electronics", name_en: "Electronics & Cables", name_es: "Electrónica y Cables", brands: ["Energizer", "PYRAMID", "Black+Decker", "DESCO"] },
-  { key: "audio", name_en: "Professional Audio", name_es: "Audio Profesional", brands: ["Shure", "JBL", "Brane Audio", "Wet Sounds", "LexAudio"] },
-  { key: "safety", name_en: "Safety & Industrial", name_es: "Seguridad & Industrial", brands: ["ANSELL", "DESCO", "Betco"] },
-  { key: "power", name_en: "Fans, Generators & Power", name_es: "Ventiladores, Generadores & Energía", brands: ["Pulsar"] },
+  { key: "audio", name_en: "Professional Audio", name_es: "Audio Profesional", brands: ["Brane Audio"] },
+  { key: "safety", name_en: "Safety & Industrial", name_es: "Seguridad & Industrial", brands: ["Betco"] },
   { key: "air", name_en: "Indoor Air Quality", name_es: "Calidad de Aire Interior", brands: ["WellAir", "Novaerus", "NanoDetect"] },
-  { key: "wood", name_en: "Wood & Lumber", name_es: "Línea de Madera", brands: ["Hardwood", "Plywood", "Treated Lumber", "Engineered Wood"] },
 ];
 
 export interface Industry {
@@ -202,23 +160,9 @@ export const SERVICES: Service[] = [
 ];
 
 export const BRAND_URLS: Record<string, string> = {
-  "Energizer": "https://www.energizer.com/",
-  "PYRAMID": "https://www.pyramidcaraudio.com/",
-  "Black+Decker": "https://www.blackanddecker.com/",
-  "DESCO": "https://www.descoindustries.com/",
-  "Shure": "https://www.shure.com/",
-  "JBL": "https://www.jbl.com/",
-  "LexAudio": "https://www.lexaudio.com/",
   "Brane Audio": "https://braneaudio.com/",
-  "Wet Sounds": "https://www.wetsounds.com/",
-  "ANSELL": "https://www.ansell.com/",
   "Betco": "https://www.betco.com/",
-  "Pulsar": "https://www.pulsarnv.com/",
   "WellAir": "https://www.wellairsolutions.com/",
   "Novaerus": "https://www.wellairsolutions.com/novaerus",
   "NanoDetect": "https://www.wellairsolutions.com/nanodetect",
-  "Hardwood": "https://www.kobetradingusa.com/contact/",
-  "Plywood": "https://www.kobetradingusa.com/contact/",
-  "Treated Lumber": "https://www.kobetradingusa.com/contact/",
-  "Engineered Wood": "https://www.kobetradingusa.com/contact/",
 };
